@@ -1,5 +1,7 @@
 # Repro: a subtree `Directionality` doesn't change a `Row`'s order (and `Row`/`Flex` have no `textDirection`)
 
+Issue: https://github.com/DartNative/dartnative/issues/60
+
 The DartNative 1.0.0 changelog says `Directionality` is supported and "Wrap a subtree in `Directionality` to set it by hand." Under `Directionality(textDirection: TextDirection.rtl)` a `Row` still lays out its children left to right, in the app's direction. In an Arabic-first app this is needed both ways: an RTL block on an LTR screen, and, more often, an LTR run inside an RTL screen (a phone number with its country code, an amount with its sign). `Row` and `Flex` also have no `textDirection` parameter to force it locally.
 
 ## Run
